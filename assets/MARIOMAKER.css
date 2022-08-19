@@ -1,0 +1,30 @@
+/* Original Mario Maker font, "MARIOMAKER.otf",
+   from: github.com/yell0wsuit/MARIOFont        */
+@font-face {
+	font-family: "MARIO MAKER";
+	font-style: normal;
+	font-weight: 400;
+	src: local("MARIO MAKER"), url(MARIOMAKER.latin.woff2) format("woff2");
+	unicode-range: U+0000,U+0021-007E,U+00A1,U+00A3-00AB,U+00AE-00B4,U+00B9-00BB,U+00BF-00FF;
+}
+@font-face {
+	font-family: "MARIO MAKER";
+	font-style: normal;
+	font-weight: 400;
+	src: local("MARIO MAKER"), url(MARIOMAKER.latin-ext.woff2) format("woff2");
+	unicode-range: U+0152-0153,U+0160-0161,U+0178,U+017D-017E,U+02B3,U+02BB-02BC,U+02DC,U+1E9E;
+}
+@font-face {
+	font-family: "MARIO MAKER";
+	font-style: normal;
+	font-weight: 400;
+	src: local("MARIO MAKER"), url(MARIOMAKER.cyrillic.woff2) format("woff2");
+	unicode-range: U+0401,U+0410-044F,U+0451;
+}
+@font-face {
+	font-family: "MARIO MAKER";
+	font-style: normal;
+	font-weight: 400;
+	src: local("MARIO MAKER"), url(MARIOMAKER.symbols.woff2) format("woff2");
+	unicode-range: U+0301,U+0336,U+1D49,U+2010,U+2012-2015,U+2018-2019,U+201C-201E,U+2022,U+2026-2030,U+2044,U+20A9,U+20AC,U+2122,U+3001-3002,U+3008-300B,U+301C,U+30FB-30FC;
+}

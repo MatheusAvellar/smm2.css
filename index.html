@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SMM2 UI</title>
+  <meta content="Matheus Avellar" name="author">
+  <!-- <meta name="description" content=""> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(assets/bg.png);
+  background-position: center;
+}
+header, main, footer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2em;
+}
+header, footer {
+  margin: 2.5em auto;
+}
+.__long {
+  min-height: 350px;
+}
+.__vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 0;
+}
+.__maxwidth {
+  max-width: 625px;
+  width: 100%;
+  margin: auto;
+}
+.__flex {
+  display: flex;
+  justify-content: stretch;
+  column-gap: .5em;
+}
+.__flex > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.__center {
+  text-align: center;
+}
+.__big {
+  font-size: 1.25em;
+}
+.__bigger {
+  font-size: 1.75em;
+}
+.__lh1 {
+  line-height: 1;
+}
+.__right-grid {
+  margin-left: 20%;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5em;
+}
+.__square-list {
+  display: flex;
+  gap: .1em;
+  padding: 1em 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.__square-list > * {
+  aspect-ratio: 1;
+  width: 5.5em;
+}
+
+.tabs .tab-content {
+  max-height: 30em;
+}
+  </style>
+</head>
+<body class="theme1">
+  <header>
+    <h1 style="font-size:4em;line-height:1">
+      <p>SUPER</p>
+      <p style="margin-top:-.5em">
+        MARIO MAKER&trade;
+        <span style="color:#e80000;font-size:1.5em;letter-spacing:-.075em">CSS</span>
+      </p>
+    </h1>
+  </header>
+  <main>
+    <h2>Theme 1:</h2>
+    <div class="theme1">
+      <section class="tabs">
+        <p style="font-size:1.5em;margin:0 0 .5em .5em">
+          Banana Man
+        </p>
+        <div class="tab-header">
+          <button class="tab">Overview</button>
+          <button class="tab selected">Uploaded Courses</button>
+          <button class="tab">Liked Courses</button>
+          <button class="tab">Advanced</button>
+        </div>
+        <div class="tab-content-wrapper">
+          <div class="tab-content">
+            <article class="__long __vertical-list">
+              <div class="card __maxwidth">
+                <p>Thwomp's Fortress</p>
+                <blockquote class="textblock">
+                  Run, leap and stomp your way through the deadly
+                  Thwomp's Fortress, adapted from SM64.
+                </blockquote>
+                <div class="__flex __lh1">
+                  <blockquote class="textblock __center">
+                    <label>World Record</label>
+                    <p>
+                      <strong class="__big">
+                        05:43.<small>211</small>
+                      </strong>
+                    </p>
+                  </blockquote>
+                  <blockquote class="textblock __center">
+                    <label>Clear Rate</label>
+                    <p>
+                      <em class="__bigger">1.<small>35%</small></em>
+                    </p>
+                  </blockquote>
+                  <blockquote class="textblock __center">
+                    <label>Course ID</label>
+                    <p>
+                      <strong class="__big">MNO-PQR-STU</strong>
+                    </p>
+                  </blockquote>
+                </div>
+                <div class="__right-grid">
+                  <button class="btn-alt">More info</button>
+                  <button class="btn-alt">View comments</button>
+                </div>
+                <div class="__right-grid">
+                  <button class="btn">Play Together</button>
+                  <button class="btn">Play</button>
+                </div>
+              </div>
+              <div class="card __maxwidth">
+                <p>Surfing</p>
+                <blockquote class="textblock">
+                  Surf the waves!
+                </blockquote>
+                <div class="__flex __lh1">
+                  <blockquote class="textblock __center">
+                    <label>World Record</label>
+                    <p>
+                      <strong class="__big">
+                        00:12.<small>340</small>
+                      </strong>
+                    </p>
+                  </blockquote>
+                  <blockquote class="textblock __center">
+                    <label>Clear Rate</label>
+                    <p>
+                      <em class="__bigger">56.<small>78%</small></em>
+                    </p>
+                  </blockquote>
+                  <blockquote class="textblock __center">
+                    <label>Course ID</label>
+                    <p>
+                      <strong class="__big">ABC-DEF-GHI</strong>
+                    </p>
+                  </blockquote>
+                </div>
+                <div class="__right-grid">
+                  <button class="btn-alt">More info</button>
+                  <button class="btn-alt">View comments</button>
+                </div>
+                <div class="__right-grid">
+                  <button class="btn">Play Together</button>
+                  <button class="btn">Play</button>
+                </div>
+              </div>
+              <div class="card __maxwidth">
+                <p>ABC</p>
+                <blockquote class="textblock">
+                  It's spacing!
+                </blockquote>
+                <div class="__flex __lh1">
+                  <blockquote class="textblock __center">
+                    <label>World Record</label>
+                    <p>
+                      <strong class="__big">
+                        00:00.<small>000</small>
+                      </strong>
+                    </p>
+                  </blockquote>
+                  <blockquote class="textblock __center">
+                    <label>Clear Rate</label>
+                    <p>
+                      <em class="__bigger">00.<small>00%</small></em>
+                    </p>
+                  </blockquote>
+                  <blockquote class="textblock __center">
+                    <label>Course ID</label>
+                    <p>
+                      <strong class="__big">AAA-AAA-AAA</strong>
+                    </p>
+                  </blockquote>
+                </div>
+                <div class="__right-grid">
+                  <button class="btn-alt">More info</button>
+                  <button class="btn-alt">View comments</button>
+                </div>
+                <div class="__right-grid">
+                  <button class="btn">Play Together</button>
+                  <button class="btn">Play</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+    <h2>Theme 2:</h2>
+    <div class="theme2">
+      <section class="tabs">
+        <div class="tab-header">
+          <button class="tab selected">Overview</button>
+          <button class="tab">Uploaded Courses</button>
+          <button class="tab">Liked Courses</button>
+          <button class="tab">Advanced</button>
+        </div>
+        <div class="tab-content-wrapper">
+          <div class="tab-content">
+            <article class="__long __square-list">
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="theme1 card">
+      <p>
+        Everything is &copy; Nintendo.
+      </p>
+      <p>
+        Super Mario Maker&trade; 2 font from <a href="https://github.com/yell0wsuit/MARIOFont">GitHub</a>,
+        by <a href="https://github.com/yell0wsuit">yell0wsuit</a>.
+      </p>
+      <p>
+        Background from <a href="https://www.spriters-resource.com/nintendo_switch/supermariomaker2/sheet/119095/">The Spriters Resource</a>,
+        by <a href="https://www.spriters-resource.com/submitter/Random+Talking+Bush/">Random Talking Bush</a>.
+      </p>
+    </div>
+  </footer>
+  <link rel="stylesheet" href="smm2.css">
+  <link rel="stylesheet" href="docs.css">
+  <link rel="stylesheet" href="assets/MARIOMAKER.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</body>
+</html>
