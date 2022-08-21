@@ -1,6 +1,8 @@
 :root {
   --smm2-white: #fff;
-  --smm2-brown: #5d1b1b;
+  --smm2-yellow: #fece00;
+  --smm2-brown: #5c1c1a;
+  --smm2-beige: #fffdee;
   --smm2-black-opacity: rgba(0,0,0,.075);
   --smm2-scrollbar-color: #4e505c;
 
@@ -9,23 +11,23 @@
   --smm2-theme1-blur-bg: #ffca00;
   --smm2-theme1-focus-bg: var(--smm2-brown);
   --smm2-theme1-focus-fg: #ffca00;
-  --smm2-theme1-card-bg: #fffdee;
+  --smm2-theme1-card-bg: var(--smm2-beige);
   --smm2-theme1-card-fg: var(--smm2-brown);
   --smm2-theme1-card-radius: 6px;
-  --smm2-theme1-card-shadow: 0 .25em .2em .125em var(--smm2-black-opacity);
+  --smm2-theme1-card-shadow: 0 .25rem .2rem .125rem var(--smm2-black-opacity);
   --smm2-theme1-textblock-bg: #fff3d3;
   --smm2-theme1-btn-bg: #fece00;
   --smm2-theme1-btn-fg: var(--smm2-brown);
   --smm2-theme1-btn-shadow:
-    0 .25em .2em .125em var(--smm2-black-opacity),
-    0 0 .125em .125em var(--smm2-black-opacity);
+    0 .25rem .075rem .025rem var(--smm2-black-opacity),
+    0 0 .125rem .075rem var(--smm2-black-opacity);
   --smm2-theme1-btn-alt-bg: var(--smm2-white);
   --smm2-theme1-btn-alt-fg: var(--smm2-brown);
   --smm2-theme1-btn-alt-shadow: var(--smm2-theme1-btn-shadow);
 
   --smm2-theme2-main-bg: #ffca00;
-  --smm2-theme2-alt-bg: #fffdee;
-  --smm2-theme2-blur-bg: #fffdee;
+  --smm2-theme2-alt-bg: var(--smm2-beige);
+  --smm2-theme2-blur-bg: var(--smm2-beige);
   --smm2-theme2-focus-bg: var(--smm2-brown);
   --smm2-theme2-card-bg: var(--smm2-black-opacity);
   --smm2-theme2-card-shadow: 0;
@@ -37,8 +39,9 @@
 }
 * {
   scrollbar-width: thin;
+  box-sizing: border-box;
 }
-.theme1 {
+[data-theme="1"] {
   --smm2-main-bg: var(--smm2-theme1-main-bg);
   --smm2-alt-bg: var(--smm2-theme1-alt-bg);
   --smm2-blur-bg: var(--smm2-theme1-blur-bg);
@@ -56,7 +59,7 @@
   --smm2-btn-alt-fg: var(--smm2-theme1-btn-alt-fg);
   --smm2-btn-alt-shadow: var(--smm2-theme1-btn-alt-shadow);
 }
-.theme2 {
+[data-theme="2"] {
   --smm2-main-bg: var(--smm2-theme2-main-bg);
   --smm2-alt-bg: var(--smm2-theme2-alt-bg);
   --smm2-blur-bg: var(--smm2-theme2-blur-bg);
@@ -69,6 +72,7 @@
 
 *::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 *::-webkit-scrollbar-track {
   background-color: rgba(0,0,0,.075);
@@ -77,6 +81,11 @@
 *::-webkit-scrollbar-thumb {
   border-radius: 100px;
   background-color: var(--smm2-scrollbar-color);
+}
+
+
+[hidden] {
+  display: none !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -92,6 +101,7 @@ em {
   font-style: normal;
 }
 button {
+  position: relative;
   appearance: none;
   font: inherit;
   text-align: center;
@@ -100,21 +110,76 @@ button {
   padding: 0;
   margin: 0;
 }
+button:focus::after {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  clip-path: polygon(
+    0 0, 0 1rem, 1rem 0, calc(100% - 1rem) 0,
+    100% 1rem, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 1rem 100%,
+    0 calc(100% - 1rem), 0 calc(100% - 1rem), 0 100%, 100% 100%, 100% 0);
+
+  animation-name: button-focus;
+  animation-duration: .4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes button-focus {
+  0% {
+    background-color: #ff6200;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+  }
+  100% {
+    background-color: #ff0000;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + (5px * 2));
+    height: calc(100% + (5px * 2));
+  }
+}
+
+select, option {
+  font: inherit;
+}
+pre {
+  background-color: #ecdcc2;
+  padding: 1rem 4rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  color: var(--smm2-brown);
+  overflow: auto;
+}
+
+dialog {
+  text-align: center;
+  color: var(--smm2-brown);
+  background-color: rgba(255, 253, 238, .7);
+  backdrop-filter: blur(8px);
+  max-width: 30rem;
+  border: 0;
+  border-top: 1rem solid rgba(209, 166, 25, .7);
+  padding: 2rem 2rem .5rem;
+}
 
 .tabs {
-  padding: 1em;
+  padding: 1rem;
   background-color: var(--smm2-main-bg);
 }
 .tabs .tab-header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  column-gap: .5em;
-  padding: 0 1em;
+  flex-wrap: wrap;
+  column-gap: .5rem;
+  padding: 0 1rem;
   max-width: 768px;
 }
 .tabs .tab-header .tab {
-  padding: .5em 1em;
+  padding: .5rem 1rem;
   background-color: var(--smm2-blur-bg);
   color: var(--smm2-focus-bg);
   border-top-left-radius: 8px;
@@ -128,13 +193,13 @@ button {
 }
 .tabs .tab-content-wrapper {
   background-color: var(--smm2-alt-bg);
-  padding: 1em;
-  box-shadow: rgba(0,0,0,.25) 0 1.5em 1em -1em inset, rgba(0,0,0,.25) 0 -1.5em 1em -1em inset;
+  padding: 1rem;
+  box-shadow: rgba(0,0,0,.25) 0 1.5rem 1rem -1rem inset, rgba(0,0,0,.25) 0 -1.5rem 1rem -1rem inset;
 }
 .tabs .tab-content {
   overflow-y: scroll;
   position: relative;
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 
 .card {
@@ -142,11 +207,11 @@ button {
   color: var(--smm2-card-fg);
   border-radius: var(--smm2-card-radius);
   box-shadow: var(--smm2-card-shadow);
-  padding: .5em;
+  padding: .5rem;
 }
 
 .textblock {
-  margin: .5em 0 0 0;
+  margin: .5rem 0 0 0;
   background-color: var(--smm2-textblock-bg);
   padding: 2.5% 5%;
   border: 0;
@@ -155,23 +220,50 @@ button {
   display: block;
   font-size: 85%;
   text-align: center;
-  margin-top: -.75em;
-  margin-bottom: 1em;
+  margin-top: -.75rem;
+  margin-bottom: 1rem;
+}
+
+.chat {
+  position: relative;
+  min-height: 2.75rem;
+  max-width: 30rem;
+  margin: 3rem auto 1rem;
+  padding: 2.5rem 4.5rem;
+  border: .3rem solid var(--smm2-yellow);
+  border-radius: 1.2rem;
+  color: var(--smm2-brown);
+  background-color: var(--smm2-beige);
+}
+.chat .from {
+  position: absolute;
+  top: 0;
+  left: .75rem;
+  transform: translateY(-100%);
+  background-color: var(--smm2-yellow);
+  font-style: normal;
+  padding: .5rem 3rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .btn, .btn-alt {
-  margin: .5em;
-  padding: .5em;
+  margin: .5rem;
+  padding: .5rem;
   border-radius: 6px;
 }
 .btn {
   background-color: var(--smm2-btn-bg);
   color: var(--smm2-btn-fg);
   box-shadow: var(--smm2-btn-shadow);
-  font-size: 1.25em;
+  max-width: 15rem;
 }
 .btn-alt {
   background-color: var(--smm2-btn-alt-bg);
   color: var(--smm2-btn-alt-fg);
   box-shadow: var(--smm2-btn-alt-shadow);
+}
+
+.card .btn {
+  font-size: 1.25rem;
 }

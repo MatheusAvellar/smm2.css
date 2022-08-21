@@ -14,15 +14,15 @@ body {
   margin: 0;
   padding: 0;
   background-image: url(assets/bg.png);
-  background-position: center;
+  background-position: center 0;
 }
 header, main, footer {
   max-width: 1200px;
   margin: auto;
-  padding: 0 2em;
+  padding: 0 2rem;
 }
 header, footer {
-  margin: 2.5em auto;
+  margin: 2.5rem auto;
 }
 .__long {
   min-height: 350px;
@@ -30,8 +30,8 @@ header, footer {
 .__vertical-list {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  padding: 1em 0;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 .__maxwidth {
   max-width: 625px;
@@ -41,7 +41,7 @@ header, footer {
 .__flex {
   display: flex;
   justify-content: stretch;
-  column-gap: .5em;
+  column-gap: .5rem;
 }
 .__flex > * {
   flex-grow: 1;
@@ -52,10 +52,10 @@ header, footer {
   text-align: center;
 }
 .__big {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 .__bigger {
-  font-size: 1.75em;
+  font-size: 1.75rem;
 }
 .__lh1 {
   line-height: 1;
@@ -65,12 +65,12 @@ header, footer {
   width: 75%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .5em;
+  gap: .5rem;
 }
 .__square-list {
   display: flex;
-  gap: .1em;
-  padding: 1em 0;
+  gap: .1rem;
+  padding: 1rem 0;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
@@ -78,15 +78,15 @@ header, footer {
 }
 .__square-list > * {
   aspect-ratio: 1;
-  width: 5.5em;
+  width: 5.5rem;
 }
 
 .tabs .tab-content {
-  max-height: 30em;
+  max-height: 30rem;
 }
   </style>
 </head>
-<body class="theme1">
+<body>
   <header>
     <h1 style="font-size:4em;line-height:1">
       <p>SUPER</p>
@@ -97,163 +97,296 @@ header, footer {
     </h1>
   </header>
   <main>
-    <h2>Theme 1:</h2>
-    <div class="theme1">
-      <section class="tabs">
-        <p style="font-size:1.5em;margin:0 0 .5em .5em">
-          Banana Man
+    <section>
+      <h2>Chat:</h2>
+      <blockquote class="chat">
+        <cite class="from">Chief</cite>
+        <p>
+          Well, it wasn't easy, but we finally finished the castle.
         </p>
+      </blockquote>
+        <pre><code>&lt;blockquote class="chat">
+  &lt;cite class="from">Chief&lt;/cite>
+  &lt;p>
+    Well, it wasn't easy, but we finally finished the castle.
+  &lt;/p>
+&lt;/blockquote></code></pre>
+    </section>
+
+    <section>
+      <h2>Dialog:</h2>
+      <dialog style="position:static" data-theme="1" open>
+        <p style="margin-bottom:1em">
+          You can now race against Ninji Ghosts. Try to beat your personal
+          record! You can adjust the number of Ninji Ghost runners from the
+          pause menu.
+        </p>
+        <button style="width:100%" class="btn">OK</button>
+      </dialog>
+      <pre><code>&lt;dialog open>
+  &lt;p>
+    You can now race...
+  &lt;/p>
+  &lt;button class="btn"> OK &lt;/button>
+&lt;/dialog></code></pre>
+    </section>
+
+
+    <section>
+      <h2>Tabs:</h2>
+      <select data-for="example-tabs">
+        <option value="1" selected>Theme 1</option>
+        <option value="2">Theme 2</option>
+      </select>
+      <section id="example-tabs" data-theme="1" class="tabs">
         <div class="tab-header">
-          <button class="tab">Overview</button>
-          <button class="tab selected">Uploaded Courses</button>
-          <button class="tab">Liked Courses</button>
-          <button class="tab">Advanced</button>
+          <button class="tab selected">Selected tab</button>
+          <button class="tab">Second tab</button>
+          <button class="tab">Third tab</button>
         </div>
         <div class="tab-content-wrapper">
           <div class="tab-content">
-            <article class="__long __vertical-list">
-              <div class="card __maxwidth">
-                <p>Thwomp's Fortress</p>
-                <blockquote class="textblock">
-                  Run, leap and stomp your way through the deadly
-                  Thwomp's Fortress, adapted from SM64.
-                </blockquote>
-                <div class="__flex __lh1">
-                  <blockquote class="textblock __center">
-                    <label>World Record</label>
-                    <p>
-                      <strong class="__big">
-                        05:43.<small>211</small>
-                      </strong>
-                    </p>
-                  </blockquote>
-                  <blockquote class="textblock __center">
-                    <label>Clear Rate</label>
-                    <p>
-                      <em class="__bigger">1.<small>35%</small></em>
-                    </p>
-                  </blockquote>
-                  <blockquote class="textblock __center">
-                    <label>Course ID</label>
-                    <p>
-                      <strong class="__big">MNO-PQR-STU</strong>
-                    </p>
-                  </blockquote>
-                </div>
-                <div class="__right-grid">
-                  <button class="btn-alt">More info</button>
-                  <button class="btn-alt">View comments</button>
-                </div>
-                <div class="__right-grid">
-                  <button class="btn">Play Together</button>
-                  <button class="btn">Play</button>
-                </div>
-              </div>
-              <div class="card __maxwidth">
-                <p>Surfing</p>
-                <blockquote class="textblock">
-                  Surf the waves!
-                </blockquote>
-                <div class="__flex __lh1">
-                  <blockquote class="textblock __center">
-                    <label>World Record</label>
-                    <p>
-                      <strong class="__big">
-                        00:12.<small>340</small>
-                      </strong>
-                    </p>
-                  </blockquote>
-                  <blockquote class="textblock __center">
-                    <label>Clear Rate</label>
-                    <p>
-                      <em class="__bigger">56.<small>78%</small></em>
-                    </p>
-                  </blockquote>
-                  <blockquote class="textblock __center">
-                    <label>Course ID</label>
-                    <p>
-                      <strong class="__big">ABC-DEF-GHI</strong>
-                    </p>
-                  </blockquote>
-                </div>
-                <div class="__right-grid">
-                  <button class="btn-alt">More info</button>
-                  <button class="btn-alt">View comments</button>
-                </div>
-                <div class="__right-grid">
-                  <button class="btn">Play Together</button>
-                  <button class="btn">Play</button>
-                </div>
-              </div>
-              <div class="card __maxwidth">
-                <p>ABC</p>
-                <blockquote class="textblock">
-                  It's spacing!
-                </blockquote>
-                <div class="__flex __lh1">
-                  <blockquote class="textblock __center">
-                    <label>World Record</label>
-                    <p>
-                      <strong class="__big">
-                        00:00.<small>000</small>
-                      </strong>
-                    </p>
-                  </blockquote>
-                  <blockquote class="textblock __center">
-                    <label>Clear Rate</label>
-                    <p>
-                      <em class="__bigger">00.<small>00%</small></em>
-                    </p>
-                  </blockquote>
-                  <blockquote class="textblock __center">
-                    <label>Course ID</label>
-                    <p>
-                      <strong class="__big">AAA-AAA-AAA</strong>
-                    </p>
-                  </blockquote>
-                </div>
-                <div class="__right-grid">
-                  <button class="btn-alt">More info</button>
-                  <button class="btn-alt">View comments</button>
-                </div>
-                <div class="__right-grid">
-                  <button class="btn">Play Together</button>
-                  <button class="btn">Play</button>
-                </div>
-              </div>
-            </article>
+            <div>First tab content</div>
+            <div hidden>Second tab content</div>
+            <div hidden>Third tab content</div>
           </div>
         </div>
       </section>
-    </div>
-    <h2>Theme 2:</h2>
-    <div class="theme2">
-      <section class="tabs">
-        <div class="tab-header">
-          <button class="tab selected">Overview</button>
-          <button class="tab">Uploaded Courses</button>
-          <button class="tab">Liked Courses</button>
-          <button class="tab">Advanced</button>
-        </div>
-        <div class="tab-content-wrapper">
-          <div class="tab-content">
-            <article class="__long __square-list">
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-              <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
-            </article>
+      <pre><code>&lt;section class="tabs">
+  &lt;div class="tab-header">
+    &lt;button class="tab selected"> Selected tab &lt;/button>
+    &lt;button class="tab"> Second tab &lt;/button>
+    &lt;button class="tab"> Third tab &lt;/button>
+  &lt;/div>
+  &lt;div class="tab-content-wrapper">
+    &lt;div class="tab-content">
+      &lt;div> First tab content &lt;/div>
+      &lt;div hidden> Second tab content &lt;/div>
+      &lt;div hidden> Third tab content &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/section></code></pre>
+    </section>
+
+    <section>
+      <h2>Theme 1:</h2>
+      <div  data-theme="1">
+        <section class="tabs">
+          <p style="font-size:1.5em;margin:0 0 .5em .5em">
+            Example Person
+          </p>
+          <div class="tab-header">
+            <button class="tab">Overview</button>
+            <button class="tab selected">Uploaded Courses</button>
+            <button class="tab">Liked Courses</button>
+            <button class="tab">Advanced</button>
           </div>
-        </div>
-      </section>
-    </div>
+          <div class="tab-content-wrapper">
+            <div class="tab-content">
+              <article hidden class="__long __vertical-list"></article>
+              <article class="__long __vertical-list">
+                <div class="card __maxwidth">
+                  <p>Thwomp's Fortress</p>
+                  <blockquote class="textblock">
+                    Run, leap and stomp your way through the deadly
+                    Thwomp's Fortress, adapted from SM64.
+                  </blockquote>
+                  <div class="__flex __lh1">
+                    <blockquote class="textblock __center">
+                      <label>World Record</label>
+                      <p>
+                        <strong class="__big">
+                          05:43.<small>211</small>
+                        </strong>
+                      </p>
+                    </blockquote>
+                    <blockquote class="textblock __center">
+                      <label>Clear Rate</label>
+                      <p>
+                        <em class="__bigger">1.<small>35%</small></em>
+                      </p>
+                    </blockquote>
+                    <blockquote class="textblock __center">
+                      <label>Course ID</label>
+                      <p>
+                        <strong class="__big">ONO-ITS-AME</strong>
+                      </p>
+                    </blockquote>
+                  </div>
+                  <div class="__right-grid">
+                    <button class="btn-alt">More info</button>
+                    <button class="btn-alt">View comments</button>
+                  </div>
+                  <div class="__right-grid">
+                    <button class="btn">Play Together</button>
+                    <button class="btn">Play</button>
+                  </div>
+                </div>
+                <div class="card __maxwidth">
+                  <p>Surfing</p>
+                  <blockquote class="textblock">
+                    Surf the waves!
+                  </blockquote>
+                  <div class="__flex __lh1">
+                    <blockquote class="textblock __center">
+                      <label>World Record</label>
+                      <p>
+                        <strong class="__big">
+                          00:12.<small>340</small>
+                        </strong>
+                      </p>
+                    </blockquote>
+                    <blockquote class="textblock __center">
+                      <label>Clear Rate</label>
+                      <p>
+                        <em class="__bigger">56.<small>78%</small></em>
+                      </p>
+                    </blockquote>
+                    <blockquote class="textblock __center">
+                      <label>Course ID</label>
+                      <p>
+                        <strong class="__big">ABC-DEF-GHI</strong>
+                      </p>
+                    </blockquote>
+                  </div>
+                  <div class="__right-grid">
+                    <button class="btn-alt">More info</button>
+                    <button class="btn-alt">View comments</button>
+                  </div>
+                  <div class="__right-grid">
+                    <button class="btn">Play Together</button>
+                    <button class="btn">Play</button>
+                  </div>
+                </div>
+                <div class="card __maxwidth">
+                  <p>ABC</p>
+                  <blockquote class="textblock">
+                    It's spacing!
+                  </blockquote>
+                  <div class="__flex __lh1">
+                    <blockquote class="textblock __center">
+                      <label>World Record</label>
+                      <p>
+                        <strong class="__big">
+                          00:00.<small>000</small>
+                        </strong>
+                      </p>
+                    </blockquote>
+                    <blockquote class="textblock __center">
+                      <label>Clear Rate</label>
+                      <p>
+                        <em class="__bigger">00.<small>00%</small></em>
+                      </p>
+                    </blockquote>
+                    <blockquote class="textblock __center">
+                      <label>Course ID</label>
+                      <p>
+                        <strong class="__big">AAA-AAA-AAA</strong>
+                      </p>
+                    </blockquote>
+                  </div>
+                  <div class="__right-grid">
+                    <button class="btn-alt">More info</button>
+                    <button class="btn-alt">View comments</button>
+                  </div>
+                  <div class="__right-grid">
+                    <button class="btn">Play Together</button>
+                    <button class="btn">Play</button>
+                  </div>
+                </div>
+              </article>
+              <article hidden class="__long __vertical-list"></article>
+              <article hidden class="__long __vertical-list"></article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <section>
+      <h2>Theme 2:</h2>
+      <div data-theme="2">
+        <section class="tabs">
+          <div class="tab-header">
+            <button class="tab selected">Clothes 1</button>
+            <button class="tab">Clothes 2</button>
+            <button class="tab">Clothes 3</button>
+          </div>
+          <div class="tab-content-wrapper">
+            <div class="tab-content">
+              <article class="__long __square-list">
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              </article>
+              <article hidden class="__long __square-list">
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              </article>
+              <article hidden class="__long __square-list">
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <script>
+const selects = [...document.getElementsByTagName("select")];
+selects.forEach(select => {
+  if(select.dataset.for) {
+    const ref = document.getElementById(select.dataset.for);
+    select.addEventListener("change", function() {
+      ref.dataset.theme = select.value;
+    });
+  } else {
+    console.warn("<select> without [data-for]", select);
+  }
+});
+    </script>
+    <script>
+function getChildElementIndex(node) {
+  return [...node.parentNode.children].indexOf(node);
+}
+const tabs = [...document.querySelectorAll(".tabs > .tab-header > .tab")];
+tabs.forEach(tab => {
+  const tabs_element = tab.parentElement.parentElement;
+  const tab_contents = tabs_element.querySelector(".tab-content-wrapper > .tab-content");
+  if(tab_contents) {
+    const index = getChildElementIndex(tab);
+    tab.addEventListener("click", function() {
+      let sibling = tab;
+      for(let sibling = tab; sibling; sibling = sibling.previousElementSibling)
+        sibling.classList.remove("selected");
+      for(let sibling = tab; sibling; sibling = sibling.nextElementSibling)
+        sibling.classList.remove("selected");
+      tab.classList.add("selected");
+
+      [...tab_contents.children].forEach((content, i) => {
+        if(i === index)
+          content.removeAttribute("hidden");
+        else
+          content.setAttribute("hidden", "");
+      });
+    });
+  } else {
+    console.warn("Tab without content", tab);
+  }
+});
+    </script>
   </main>
   <footer>
-    <div class="theme1 card">
+    <div data-theme="1" class="card">
       <p>
         Everything is &copy; Nintendo.
       </p>
